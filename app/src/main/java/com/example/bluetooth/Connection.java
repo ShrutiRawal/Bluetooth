@@ -25,7 +25,7 @@ public class Connection extends AppCompatActivity {
     String address = null;
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     BluetoothAdapter myBluetooth = null;
-    public static String EXTRA_ADDRESS = "device_address";
+    String EXTRA_ADDRESS = "device_address";
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
     Button StartConnection;

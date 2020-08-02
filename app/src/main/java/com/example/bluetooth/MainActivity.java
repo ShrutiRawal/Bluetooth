@@ -133,13 +133,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View view) {
                 if(mBluetoothAdapter == null){
                     Log.d(TAG, "enableDisableBT: Does not have BT capabilities.");
-                    Toast.makeText(MainActivity.this,"Try Again!",Toast.LENGTH_SHORT).show();
                 }
                 if(!mBluetoothAdapter.isEnabled()){
 
                     Log.d(TAG, "enableDisableBT: enabling BT.");
                     Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                    Toast.makeText(MainActivity.this,"Enabled",Toast.LENGTH_SHORT).show();
                     startActivity(enableBTIntent);
 
                     IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
@@ -149,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     Log.d(TAG, "enableDisableBT: disabling BT.");
                     mBluetoothAdapter.disable();
                     Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                    Toast.makeText(MainActivity.this,"disabling!",Toast.LENGTH_SHORT).show();
                     startActivity(enableBTIntent);
 
                     IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
@@ -199,14 +196,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(connection);
             }
         });
-        /*Send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent connection=new Intent(MainActivity.this,Sending.class);
-                connection.putExtra(EXTRA_ADDRESS, deviceAddress);
-                startActivity(connection);
-            }
-        });*/
 
     }
 
